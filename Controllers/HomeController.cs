@@ -17,6 +17,22 @@ namespace MVC4Crud2.Controllers
             //return View();
         }
 
+        //barnhen begin
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Buscar()
+        {
+            try
+            {
+
+                return Json(db.Contacts.ToList());
+            }
+            catch
+            {
+                return View();
+            }
+        }
+        //barnhen end
+
         public ActionResult About()
         {
             ViewBag.Message = "Your app description page.";
